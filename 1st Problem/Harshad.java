@@ -1,4 +1,4 @@
-public class HarshadCheck {
+public class Harshad {
 
 public static int harshadNumber(int x) {
     int sum = 0;
