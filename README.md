@@ -1,43 +1,32 @@
 task#1: public class HarshadCheck {
-import java.util.Scanner;
 
-class MathCalc {
+public static int harshadNumber(int x) {
+    int sum = 0;
+    int temp = x;
 
-    int number;
+    // Calculate sum of digits
+    while (temp > 0) {
+        sum += temp % 10;
+        temp /= 10;
+    }
 
-    void check() {
-        int sum = 0;
-        int temp = number;
-
-        while (temp != 0) {
-            int rem = temp % 10;
-            sum = sum + rem;
-            temp = temp / 10;
-        }
-
-        if (number % sum == 0) {
-            System.out.println("It is a Harshad number");
-        } else {
-            System.out.println("It is Not a Harshad number");
-        }
+    // Check Harshad condition
+    if (x % sum == 0) {
+        return sum;
+    } else {
+        return -1;
     }
 }
 
-public class Harshad {
-    public static void main(String[] args) {
+public static void main(String[] args) {
+    int x1 = 18;
+    int x2 = 23;
 
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter number: ");
-        int n = sc.nextInt();
-
-        MathCalc h = new MathCalc(); 
-        h.number = n;
-        h.check();                 
-
-        sc.close();
-    }
+    System.out.println(harshadNumber(x1)); // Output: 9
+    System.out.println(harshadNumber(x2)); // Output: -1
 }
+}
+
 harshad problem :
 
 import java.util.Scanner;
